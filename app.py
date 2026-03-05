@@ -1,6 +1,6 @@
-import streamlit as st # Importación de Streamlit para crear la aplicación web
-import pandas as pd # Importación de pandas para manipulación de datos
-import plotly as plt # Importación de plotly.graph_objects como go
+import pandas as pd
+import plotly.graph_objects as go  # Importación de plotly.graph_objects como go
+import streamlit as st
 
 # Leer los datos del archivo CSV
 car_data = pd.read_csv('vehicles_us.csv')
