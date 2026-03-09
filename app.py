@@ -8,6 +8,8 @@ car_data = pd.read_csv('vehicles_us.csv')
 # Configurar el título de la aplicación Streamlit
 st.header('Análisis de datos de anuncios de venta de coches')
 
+st.checkbox('Mostrar datos crudos')
+
 # Crear un botón en la aplicación Streamlit
 hist_button = st.button('Construir histograma')
 
