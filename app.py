@@ -8,8 +8,8 @@ car_data = pd.read_csv('vehicles_us.csv')
 # Configurar el título de la aplicación Streamlit
 st.header('Análisis de datos de venta de coches')
 
-st.checkbox('Mostrar marcas de coches más vendidos')
-if st.checkbox('Mostrar marcas de coches más vendidos'):
+most_sale_cars_checkbox = st.checkbox('Mostrar marcas de coches más vendidos')
+if most_sale_cars_checkbox:
     # Contar la cantidad de anuncios por marca
     brand_counts = car_data['brand'].value_counts()
 
