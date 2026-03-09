@@ -6,9 +6,16 @@ import streamlit as st
 car_data = pd.read_csv('vehicles_us.csv')
 
 # Configurar el título de la aplicación Streamlit
-st.header('Análisis de datos de anuncios de venta de coches')
+st.header('Análisis de datos de venta de coches')
 
-st.checkbox('Mostrar datos crudos')
+st.checkbox('Mostrar marcas de coches más vendidos')
+if st.checkbox('Mostrar marcas de coches más vendidos'):
+    # Contar la cantidad de anuncios por marca
+    brand_counts = car_data['brand'].value_counts()
+
+    # Mostrar las marcas de coches más vendidos
+    st.write('Marcas de coches más vendidos:')
+    st.write(brand_counts)
 
 # Crear un botón en la aplicación Streamlit
 hist_button = st.button('Construir histograma')
@@ -31,9 +38,10 @@ if hist_button:
 
 
 #Boton para construir un gráfico de dispersión
-disp_button = st.button('Construir gráfico de dispersión')
+disp_button = st.checkbox('Construir gráfico de dispersión')
 
 if disp_button:
+
     st.write('Creación de un gráfico de dispersión para el conjunto de datos de anuncios de venta de coches')
 
     # Crear un gráfico de dispe rsión utilizando plotly.graph_objects
