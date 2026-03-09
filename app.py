@@ -5,6 +5,7 @@ import streamlit as st
 # Leer los datos del archivo CSV
 car_data = pd.read_csv('vehicles_us.csv')
 
+# Configurar el título de la aplicación Streamlit
 st.header('Análisis de datos de anuncios de venta de coches')
 
 # Crear un botón en la aplicación Streamlit
