@@ -5,6 +5,8 @@ import streamlit as st
 # Leer los datos del archivo CSV
 car_data = pd.read_csv('vehicles_us.csv')
 
+st.header('Análisis de datos de anuncios de venta de coches')
+
 # Crear un botón en la aplicación Streamlit
 hist_button = st.button('Construir histograma')
 
@@ -24,11 +26,14 @@ if hist_button:
     # 'use_container_width=True' ajusta el ancho del gráfico al contenedor
     st.plotly_chart(fig, use_container_width=True)
 
+
+#Boton para construir un gráfico de dispersión
 disp_button = st.button('Construir gráfico de dispersión')
+
 if disp_button:
     st.write('Creación de un gráfico de dispersión para el conjunto de datos de anuncios de venta de coches')
 
-    # Crear un gráfico de dispersión utilizando plotly.graph_objects
+    # Crear un gráfico de dispe rsión utilizando plotly.graph_objects
     fig_disp = go.Figure(data=go.Scatter(x=car_data['odometer'], y=car_data['price'], mode='markers'))
 
     # Opcional: Añadir títulos a los ejes y al gráfico
@@ -38,4 +43,3 @@ if disp_button:
 
     # Mostrar el gráfico de dispersión en la aplicación Streamlit
     st.plotly_chart(fig_disp, use_container_width=True)
-    

@@ -2,3 +2,4 @@ pandas
 plotly.graph_objects
 scipy
 streamlit
+plotly
