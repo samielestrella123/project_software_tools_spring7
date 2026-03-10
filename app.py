@@ -9,13 +9,14 @@ car_data = pd.read_csv('vehicles_us.csv')
 st.header('Análisis de datos de venta de coches')
 
 most_sale_cars_checkbox = st.checkbox('Mostrar marcas de coches más vendidos')
-if most_sale_cars_checkbox:
-    # Contar la cantidad de anuncios por marca
-    brand_counts = car_data['brand'].value_counts()
 
-    # Mostrar las marcas de coches más vendidos
-    st.write('Marcas de coches más vendidos:')
-    st.write(brand_counts)
+if most_sale_cars_checkbox:
+    # Get the 5 most sold car brands
+    top_5_brands = car_data['brand'].value_counts().head(5)
+    
+    # Display the top 5 brands
+    st.write('Top 5 marcas de coches más vendidos:')
+    st.write(top_5_brands)
 
 # Crear un botón en la aplicación Streamlit
 hist_button = st.button('Construir histograma')
