@@ -12,7 +12,7 @@ most_sale_cars_checkbox = st.checkbox('Mostrar marcas de coches más vendidos')
 
 if most_sale_cars_checkbox:
     # Get the 5 most sold car brands
-    top_5_brands = car_data['brand'].value_counts().head(5)
+    top_5_brands = car_data['model'].value_counts().head(5)
     
     # Display the top 5 brands
     st.write('Top 5 marcas de coches más vendidos:')
